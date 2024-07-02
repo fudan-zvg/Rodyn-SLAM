@@ -3,7 +3,7 @@
 
 > [**RoDyn-SLAM: Robust Dynamic Dense RGB-D SLAM with Neural Radiance Fields**](https://arxiv.org/abs/2407.01303),            
 > Haochen Jiang*, Yueming Xu*, Kejie Li, Jianfeng Feng, Li Zhang  
-> **Arxiv preprint**
+> **IEEE RAL 2024**
 
 **Official implementation of "RoDyn-SLAM: Robust Dynamic Dense RGB-D SLAM with Neural Radiance Fields".** 
 
@@ -20,8 +20,8 @@
 ```bibtex
 @article{jiang2024rodynslam,
   title={RoDyn-SLAM: Robust Dynamic Dense RGB-D SLAM with Neural Radiance Fields},
-  author={Haochen Jiang and Yueming Xu and Kejie Li and Jianfeng Feng and Li Zhang},
-  journal={2407.01303},
+  author={Jiang, Haochen and Xu, Yueming and Li, Kejie and Feng, Jianfeng and Zhang, Li},
+  journal={IEEE Robotics and Automation Letters},
   year={2024},
 }
 ```
