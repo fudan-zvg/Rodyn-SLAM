@@ -9,7 +9,7 @@
 
 ## 🚀 News
 
-- **(2024/11/14)** Our latest work, [DG-SLAM]((https://arxiv.org/abs/2411.08373)), a 3D GS-based SLAM system for dyanmic scenes, has been accepted for a poster presentation at NIPS 24. We will be discussing it at the conference and welcome everyone to engage with our latest work!
+- **(2024/11/14)** Our latest work, [DG-SLAM](https://arxiv.org/abs/2411.08373), a 3D GS-based SLAM system for dyanmic scenes, has been accepted for a poster presentation at NIPS 24. We will be discussing it at the conference and welcome everyone to engage with our latest work!
 
 - **(2024/11/12)** The basic version of code is released, including the key part of the proposed SLAM system, i.e. motion mask generation, invalid sample points filter, edge extraction and loss computation, hybrid pose optimization algorithm. 
 
