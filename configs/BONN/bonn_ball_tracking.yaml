@@ -1,0 +1,23 @@
+inherit_from: configs/BONN/bonn.yaml
+mapping:
+  bound: [[-4.3,2.9],[-0.4,3.4],[-6.0,0.1]]
+  marching_cubes_bound: [[-4.3,2.9],[-0.4,3.4],[-6.0,0.1]]
+
+data:
+  datadir: ./data/BONN/rgbd_bonn_balloon_tracking
+  trainskip: 1
+  output: output/BONN/bonn_ball_track
+  exp_name: demo_base
+
+cam:  #intrinsic is same per scene in BONN
+  H: 480 
+  W: 640
+  fx: 542.822841
+  fy: 542.576870
+  cx: 315.593520
+  cy: 237.756098
+  crop_edge: 8
+  crop_size: [384,512]
+  distortion: [0.039903, -0.099343, -0.000730, -0.000144, 0.000000]
+  near: 0
+  far: 5

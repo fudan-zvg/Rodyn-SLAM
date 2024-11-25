@@ -1,0 +1,128 @@
+dataset: 'bonn'
+
+data:
+  downsample: 1
+  sc_factor: 1
+  translation: 0
+  num_workers: 4
+
+flow:
+  flow_model: 'gma'
+  checkpoint: "checkpoints/gma-things.pth"
+  window_size: 4
+
+mapping:
+  sample: 2048
+  first_mesh: True
+  iters: 30
+  lr_embed: 0.001
+  lr_decoder: 0.001
+  lr_rot: 0.005
+  lr_trans: 0.001
+  keyframe_every: 5
+  map_every: 5
+  local_ba_every: 10
+  n_pixels: 0.05
+  first_iters: 1000
+  optim_cur: False
+  optim_cur_lb: False
+  min_pixels_cur: 100
+  map_accum_step: 1
+  pose_accum_step: 5
+  map_wait_step: 0
+  filter_depth: False
+
+tracking:
+  iter: 20
+  edge_iter: 20
+  sample: 1024
+  pc_samples: 40960
+  lr_rot: 0.005
+  lr_trans: 0.001
+  lr_rot_edge: 0.005
+  lr_trans_edge: 0.001
+  ignore_edge_W: 20
+  ignore_edge_H: 20
+  iter_point: 0
+  wait_iters: 100
+  const_speed: False
+  best: True
+
+grid:
+  enc: 'HashGrid'
+  tcnn_encoding: True
+  hash_size: 16
+  voxel_color: 0.04
+  voxel_sdf: 0.02
+  oneGrid: True
+
+pos:
+  enc: 'OneBlob'
+  n_bins: 16
+
+decoder:
+  geo_feat_dim: 15
+  hidden_dim: 32
+  num_layers: 2
+  num_layers_color: 2
+  hidden_dim_color: 32
+  tcnn_network: False
+
+cam:  #NOTE: intrinsic is different per scene in TUM
+  H: 480 
+  W: 640 
+  fx: 542.822841
+  fy: 542.576870
+  cx: 315.593520
+  cy: 237.756098
+  png_depth_scale: 5000.0  # 5000 a pixel value of 5000 in the depth image corresponds to a distance of 1 meter from the camera
+  crop_edge: 0
+  near: 0
+  far: 5
+  depth_trunc: 5.
+
+training:
+  rgb_weight: 20  # 10.0   20
+  depth_weight: 0.01  # 0.1  0.5
+  sdf_weight: 100  # 5000  1000
+  fs_weight: 5
+  eikonal_weight: 0
+  smooth_weight: 0   # 0.00000001  0.0001
+  smooth_pts: 64
+  smooth_vox: 0.04
+  smooth_margin: 0.
+  n_samples: 64
+  n_samples_d: 64 # 64
+  range_d: 0.25
+  n_range_d: 21
+  n_importance: 0
+  perturb: 1
+  white_bkgd: False
+  trunc: 0.05
+  rot_rep: 'axis_angle'  # quat
+  rgb_missing: 0.0 # Would cause some noisy points around free space, but better completion
+  seg_mask: True
+  line_feature: False
+  edge_feature: True
+  cannyThreshold1: 100
+  cannyThreshold2: 150
+  motion_mask: False
+
+mesh:
+  resolution: 512
+  render_color: False
+  vis_video: 100  # 5
+  vis: 500
+  voxel_eval: 0.03
+  voxel_final: 0.03
+  visualisation: False
+
+img:
+  save_rate: 10
+  n_importance: 20
+  visualisation: False
+
+# neus
+variance:
+  init_val: 0.3
+  modulate: false
