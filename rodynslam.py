@@ -947,18 +947,14 @@ class RodynSLAM():
                 depth_colormap = colormap_image(batch["depth"])
                 depth_colormap[:, mask] = 255.
                 depth_colormap = depth_colormap.permute(1, 2, 0).cpu().numpy()
-                if self.config["training"]["motion_mask"]:
-                    motion_mask = batch["motion_mask"]
-                    seg_mask_static_colormap = colormap_image(motion_mask)
-                    seg_mask_static_colormap = seg_mask_static_colormap.permute(1, 2, 0).cpu().numpy()
-                else:
-                    seg_mask = batch["seg_mask"]
-                    seg_mask_colormap = colormap_image(seg_mask)
-                    seg_mask_colormap = seg_mask_colormap.permute(1, 2, 0).cpu().numpy()
+                
+                seg_mask = batch["seg_mask"]
+                seg_mask_colormap = colormap_image(seg_mask)
+                seg_mask_colormap = seg_mask_colormap.permute(1, 2, 0).cpu().numpy()
 
-                    seg_mask_static = 1-seg_mask
-                    seg_mask_static_colormap = colormap_image(seg_mask_static)
-                    seg_mask_static_colormap = seg_mask_static_colormap.permute(1, 2, 0).cpu().numpy()
+                seg_mask_static = 1-seg_mask
+                seg_mask_static_colormap = colormap_image(seg_mask_static)
+                seg_mask_static_colormap = seg_mask_static_colormap.permute(1, 2, 0).cpu().numpy()
 
                 rgb_sample = rgb.copy()
                 aW = self.config['tracking']['ignore_edge_W']
